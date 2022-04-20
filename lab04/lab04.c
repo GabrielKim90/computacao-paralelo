@@ -20,8 +20,8 @@ int main()
     
     shmPTR = (int *) shmat(shmID, NULL, 0);
     
-    int i = 10;
-    shmPTR = i;
+    int i = 5;
+    shmPTR[0] = i;
     
     pid = fork();
     
@@ -32,14 +32,14 @@ int main()
     }
     else if (pid == 0)
     {
-        int x = shmPTR;
+        int x = shmPTR[0];
         x = x + 5;
         shmPTR = x;
     }
     
     printf("%d", i);
     wait(&status);
-    i = shmPTR;
+    i = shmPTR[0];
     i = i*2;
     printf("%d", i);
 }
