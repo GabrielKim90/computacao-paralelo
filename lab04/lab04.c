@@ -34,12 +34,15 @@ int main()
     {
         int x = shmPTR[0];
         x = x + 5;
-        shmPTR = x;
+        shmPTR[0] = x;
     }
-    
-    printf("%d", i);
-    wait(&status);
-    i = shmPTR[0];
-    i = i*2;
-    printf("%d", i);
+    else
+    {
+        printf("%d", shmPTR[0]);
+        wait(&status);
+        i = shmPTR[0];
+        i = i*2;
+        shmPTR[0] = i;
+        printf("%d", shmPTR[0]);
+    }
 }
