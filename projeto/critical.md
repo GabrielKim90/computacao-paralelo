@@ -1,0 +1,2 @@
+A seção critical utilizado no codigo serve para, somente uma thread do codigo poder ser executado por vez,
+que no caso presente no nosso codigo será a soma da variável S, que contem o resultado de um loop for, para a variável global SP
